@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">POS 收银系统</string>
+    <string name="pos_title">POS 收银系统</string>
+    <string name="payment_title">支付</string>
+    <string name="printer_title">打印</string>
+    <string name="scanner_title">条形码扫描</string>
+
+    <!-- Button strings -->
+    <string name="button_add_to_cart">加入购物车</string>
+    <string name="button_checkout">结 账</string>
+    <string name="button_clear">清 空</string>
+    <string name="button_scan">扫 码</string>
+    <string name="button_confirm_payment">确认支付</string>
+    <string name="button_print">打 印</string>
+    <string name="button_retry">重试</string>
+    <string name="button_skip">跳过</string>
+    <string name="button_back">返回</string>
+    <string name="button_confirm">确认</string>
+
+    <!-- Label strings -->
+    <string name="label_products">商品</string>
+    <string name="label_cart">购物车</string>
+    <string name="label_price">价格</string>
+    <string name="label_quantity">数量</string>
+    <string name="label_total">总计</string>
+    <string name="label_discount">折扣</string>
+    <string name="label_payment_method">支付方式</string>
+    <string name="label_cash">现金支付</string>
+    <string name="label_card">银行卡</string>
+    <string name="label_mobile_pay">移动支付</string>
+
+    <!-- Message strings -->
+    <string name="msg_loading">加载中...</string>
+    <string name="msg_success">成功</string>
+    <string name="msg_error">错误</string>
+    <string name="msg_payment_success">支付成功</string>
+    <string name="msg_payment_failed">支付失败</string>
+    <string name="msg_print_success">打印成功</string>
+    <string name="msg_print_failed">打印失败</string>
+    <string name="msg_empty_cart">购物车为空</string>
+    <string name="msg_select_payment_method">请选择支付方式</string>
+</resources>
