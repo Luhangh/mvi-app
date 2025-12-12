@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -52,7 +53,8 @@ import com.pos.ui.components.ProductCard
 fun POSScreen(
     viewModel: POSViewModel = hiltViewModel(),
     onNavigateToPayment: (String, Double, List<Any>) -> Unit = { _, _, _ -> },
-    onNavigateToScanner: () -> Unit = { }
+    onNavigateToScanner: () -> Unit = { },
+    onNavigateToDeveloperMenu: () -> Unit = { }
 ) {
     val state by viewModel.state.collectAsState()
     val snackbarHostState = remember { SnackbarHostState() }
@@ -95,6 +97,12 @@ fun POSScreen(
             TopAppBar(
                 title = { Text("POS 收银系统") },
                 actions = {
+                    IconButton(onClick = onNavigateToDeveloperMenu) {
+                        Icon(
+                            imageVector = Icons.Default.Build,
+                            contentDescription = "开发者菜单"
+                        )
+                    }
                     IconButton(onClick = {
                         viewModel.handleIntent(POSIntent.LoadProducts)
                     }) {
@@ -150,6 +158,8 @@ fun POSScreen(
                                 name = product.name,
                                 price = product.price,
                                 barcode = product.barcode,
+                                stock = product.stock,
+                                category = product.category,
                                 onAddToCart = {
                                     viewModel.handleIntent(POSIntent.AddToCart(product))
                                 }

@@ -1,6 +1,7 @@
 package com.pos.app
 
 import android.app.Application
+import android.util.Log
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
@@ -10,9 +11,10 @@ class POSApplication : Application() {
         super.onCreate()
 
         // 初始化Timber
-        // if (BuildConfig.DEBUG) {
-        //     Timber.plant(Timber.DebugTree())
-        // }
+        if (Log.isLoggable("POS", Log.DEBUG)) {
+            Timber.plant(Timber.DebugTree())
+        }
+
 
         Timber.d("POS Application initialized")
     }

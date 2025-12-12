@@ -44,6 +44,15 @@ interface ProductDao {
 
     @Delete
     suspend fun deleteProduct(product: ProductEntity)
+
+    @Insert
+    suspend fun insert(product: ProductEntity)
+
+    @Query("SELECT * FROM products WHERE isActive = 1 ORDER BY updatedAt DESC")
+    suspend fun getAllProductsOnce(): List<ProductEntity>
+
+    @Query("DELETE FROM products")
+    suspend fun deleteAll()
 }
 
 /**

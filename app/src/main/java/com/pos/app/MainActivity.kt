@@ -11,6 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.pos.feature.payment.screen.PaymentScreen
+import com.pos.feature.pos.DeveloperMenuScreen
 import com.pos.feature.pos.screen.POSScreen
 import com.pos.feature.printer.screen.PrinterScreen
 import com.pos.feature.scanner.screen.ScannerScreen
@@ -47,6 +48,17 @@ class MainActivity : ComponentActivity() {
                                 },
                                 onNavigateToScanner = {
                                     navController.navigate("scanner")
+                                },
+                                onNavigateToDeveloperMenu = {
+                                    navController.navigate("developer")
+                                }
+                            )
+                        }
+
+                        composable("developer") {
+                            DeveloperMenuScreen(
+                                onNavigateBack = {
+                                    navController.popBackStack()
                                 }
                             )
                         }
